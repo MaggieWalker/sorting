@@ -1,12 +1,12 @@
 
 describe('Bubble Sort', function(){ 
-    // beforeAll(function(){
-    //     spyOn(bubbleSort, 'swap').andcallThrough();
-    // });
-    // it('will swap this number of times', function(){
-    //     bubbleSort([2, 7, 4]);
-    //     console.log(bubbleSort.swap.calls.count());
-    // })
+    beforeAll(function(){
+        spyOn(window, 'swap').and.callThrough();
+    });
+    it('will swap this number of times', function(){
+        bubbleSort([2, 7, 4]);
+        expect(swap.calls.count()).toEqual(4);
+    })
 
     it('handles an empty array', function(){ 
         expect(bubbleSort([])).toEqual([]); 
